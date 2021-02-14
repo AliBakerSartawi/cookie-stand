@@ -1,0 +1,26 @@
+* {
+    font-family: 'Raleway', sans-serif;
+    color: beige;
+}
+
+body {
+    background-image: url(../images/prateek-katyal-q7fMY7kBBz8-unsplash-croppedagain.jpg);
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-size: cover;
+}
+
+main section {
+    padding: 50px 0 0 100px;
+}
+
+main section h2 {
+    font-size: xx-large;
+    font-weight: 700;
+    margin-bottom: 5px;
+}
+
+main section ul li {
+    font-size: larger;
+    margin-bottom: 5px;
+}
