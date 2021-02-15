@@ -46,7 +46,7 @@ const seattle = {
       this.getAvgCust();
       let perHourCookies = this.avgCust * this.avgPerCustSales;
       this.salesPerHour.push(`${hours[i]}: ${Math.ceil(perHourCookies)}`);
-      totalCookies = totalCookies + perHourCookies;
+      totalCookies = totalCookies + perHourCookies; //or better make it totalCookies += perHourCookies
       const liEl = document.createElement('li');
       unEl.appendChild(liEl);
       liEl.textContent = `${hours[i]}: ${Math.ceil(perHourCookies)}`;
