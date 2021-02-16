@@ -1,0 +1,42 @@
+*{
+  box-sizing: border-box; /* this will calculate the whole box with border and padding and margin when calculating width percentages*/
+}
+
+header {
+  background-color: #f1f1f1;
+  padding: 30px;
+  text-align: center;
+}
+
+.row :first-child {
+  background-color: #aaa;
+  /* width: 25%; */
+}
+
+.row :nth-child(2) {
+  background-color: #bbb;
+  /* width: 50%; */
+}
+
+.row :nth-child(3) {
+  background-color: #ccc;
+  /* width: 25%; */
+}
+
+/* % will take percentage from the parent container, vh vw will take percentage from the browser or screen */
+/* vh is view height, vw is view width */
+/* using px is not recommended */
+
+.column {
+  float: left;
+  /* min-height: 90vh; */
+  width: 33.33%;
+  padding: 20px;
+}
+
+footer {
+  clear: both; /* will clear any floating side effects*/
+  background-color: #f1f1f1;
+  padding: 15px;
+  text-align: center;
+}
