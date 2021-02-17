@@ -5,13 +5,13 @@
 //2 the use of `new` keyword to instantiate objects
 //3 prototype method
 
-function Cat(name, age, likes, goodWithDogs, goodWithCats, goodWithKids, breed, imagePath) {
+function Cat(name, age, likes, goodWithCats, goodWithKids, goodWithDogs, breed) {
   this.name = name;
   this.age = age;
   this.likes = likes;
-  this.goodWithDogs = goodWithDogs;
   this.goodWithCats = goodWithCats;
   this.goodWithKids = goodWithKids;
+  this.goodWithDogs = goodWithDogs;
   this.breed = breed;
   this.imagePath = './images/${this.name).jpeg';
 
@@ -61,3 +61,23 @@ Cat.prototype.render = function(){
 const frankie = new Cat('frankie', 3, ['cuddling', 'running'], false, true, true, 'Siamese', '../images/salmon.png');
 console.log(frankie);
 frankie.render();
+
+const form = document.getElementById('cats-form');
+form.addEventListener('submit', function(event){
+  event.preventDefault();
+  console.log(event.target);
+
+  const name = event.target.name.value;
+  const breed = event.target.breed.value;
+  //split to make multiple values as an array
+  // or can make it like split('-') or split(' ') to state the type of allowed separator, a dash or a space, default is comma I guess
+  const likes = event.target.likes.value.split(',');
+  //for booleans we use checked instead of value
+  const likesCats = event.target.likescats.checked;
+  const likesKids = event.target.likeskids.checked;
+  const likesDogs = event.target.likesdogs.checked;
+  const cattie = new Cat(name, 11, likes, likesCats, likesKids, likesDogs, breed);
+  cattie.render();
+  form.reset(); //to reset form values after submitting
+});
+

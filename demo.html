@@ -15,21 +15,39 @@
     </header>
 
     <main>
-        <section class="row">
-            <article class="column">
-                Lorem ipsum dolor sit amet consectetur adipisicing elit. Recusandae, minima animi. Quasi odit nesciunt obcaecati iure nisi, enim, ipsa exercitationem facere autem corporis expedita, velit culpa suscipit dolor porro tenetur!
-            </article>
-            <article class="column">
-                Lorem ipsum dolor sit amet consectetur adipisicing elit. Recusandae, minima animi. Quasi odit nesciunt obcaecati iure nisi, enim, ipsa exercitationem facere autem corporis expedita, velit culpa suscipit dolor porro tenetur!
-            </article>
-            <article class="column">
-                Lorem ipsum dolor sit amet consectetur adipisicing elit. Recusandae, minima animi. Quasi odit nesciunt obcaecati iure nisi, enim, ipsa exercitationem facere autem corporis expedita, velit culpa suscipit dolor porro tenetur!
-            </article>
-        </section>
+        
+      <form id="cats-form">
+          <fieldset>
+            <legend>Basic Info</legend>
+            <label for="name">Name</label>
+            <input type="text" id="name">
+
+            <label for="breed">Breed</label>
+            <input type="text" id="breed" required>
+
+            <label for="likes">Likes</label>
+            <input type="text" id="likes" placeholder="separate likes with commas">
+
+            <label for="likescats">Likes Cats</label>
+            <input type="checkbox" id="likescats" required>
+
+            <label for="likeskids">Likes Kids</label>
+            <input type="checkbox" id="likeskids">
+
+            <label for="likesdogs">Likes Dogs</label>
+            <input type="checkbox" id="likesdogs">
+
+            <input type="submit">
+          </fieldset>
+        </form>
+
+        <section id="cats"></section>
+        
     </main>
 
     <footer>
         <p>footer</p>
     </footer>
+    <script src="JavaScript/demo.js"></script>
 </body>
 </html>

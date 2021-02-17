@@ -81,25 +81,6 @@ function renderHeader(){
 }
 
 
-// footerTotals function
-function renderFooterTotals(){
-  const container = document.getElementById('sales');
-  const tableRow = document.createElement('tr');
-  container.appendChild(tableRow);
-
-  const tableHeadingEl = document.createElement('th');
-  tableRow.appendChild(tableHeadingEl);
-  tableHeadingEl.setAttribute('scope', 'row');
-  tableHeadingEl.textContent = 'Totals';
-
-  for (let i = 0; i < footerTotals.length; i++) {
-    const tableHeadingEl = document.createElement('th');
-    tableRow.appendChild(tableHeadingEl);
-    tableHeadingEl.textContent = Math.ceil(footerTotals[i]);
-  }
-}
-
-
 //table renders
 renderHeader();
 seattle.render();
@@ -107,4 +88,69 @@ tokyo.render();
 dubai.render();
 paris.render();
 lima.render();
+
+
+
+
+// footerTotals function
+function renderFooterTotals(){
+
+  const footerContainer = document.getElementById('sales');
+  const footerRow = document.createElement('tr');
+  // footerContainer.removeChild(footerRow)[0];
+  footerContainer.appendChild(footerRow);
+  // footerRow.setAttribute('id', 'footer-remove');
+  
+  const tableHeadingEl = document.createElement('th');
+  footerRow.appendChild(tableHeadingEl);
+  tableHeadingEl.setAttribute('scope', 'row');
+  tableHeadingEl.textContent = 'Totals';
+  
+  for (let i = 0; i < footerTotals.length; i++) {
+    const tableHeadingEl = document.createElement('th');
+    footerRow.appendChild(tableHeadingEl);
+    tableHeadingEl.textContent = Math.ceil(footerTotals[i]);
+  }
+}
+
+
+const form = document.getElementById('new-shop');
+form.addEventListener('submit', function(event){
+  event.preventDefault();
+  
+  const name = event.target.name.value;
+  const min = event.target.min.value;
+  const max = event.target.max.value;
+  const avg = event.target.avg.value;
+  const newShop = new ShopLocation(name, min, max, avg);
+  // remove here by Id
+  // footerContainer.removeChild(footerRow);
+  
+  const container = document.getElementById('sales');
+  const rowCount = container.rows.length;
+  container.deleteRow(rowCount -1);
+  newShop.render();
+  form.reset();
+
+  renderFooterTotals();
+});
+
 renderFooterTotals();
+
+// function newFooter() {
+//   const newContainer = document.getElementById('sales');
+//   const newFooter = document.createElement('tr');
+//   newContainer.appendChild(newFooter);
+
+//   const tableHeadingEl = document.createElement('th');
+//   newFooter.appendChild(tableHeadingEl);
+//   tableHeadingEl.setAttribute('scope', 'row');
+//   tableHeadingEl.textContent = 'Totals';
+
+//   for (let i = 0; i < footerTotals.length; i++) {
+//     const tableHeadingEl = document.createElement('th');
+//     newFooter.appendChild(tableHeadingEl);
+//     tableHeadingEl.textContent = Math.ceil(footerTotals[i]);
+//   }
+// }
+// newFooter();
