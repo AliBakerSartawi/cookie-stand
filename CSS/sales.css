@@ -1,6 +1,6 @@
 * {
     font-family: 'Raleway', sans-serif;
-    color: beige;
+    /* color: beige; */
 }
 
 nav {
@@ -36,9 +36,56 @@ body {
     background-size: cover;
 }
 
+#new-shop {
+  /* display: block; */
+  margin-top: 7%;
+  margin-left: auto;
+  margin-right: auto;
+  width: 50%;
+  padding: 25px;
+  opacity: 85%;
+  background-color: grey;
+  color: white;
+}
+
+#new-shop legend {
+  text-align: center;
+  font-size: xx-large;
+  margin-bottom: 25px;
+}
+
+#fields {
+  float: left;
+  position: relative;
+  left: 27%;
+  /* background-color: teal; */
+  /* width: 50%; */
+  text-align: right;
+}
+
+#fields input,
+#fields label {
+  margin-bottom: 10px;
+  font-size: medium;
+}
+
+#fields :last-child {
+  width: 47%;
+  padding: 10px;
+  background-color: black;
+  color: white;
+  font-size: medium;
+}
+
+#fields :last-child:hover {
+  background-color: white;
+  color: black;
+  transition: 350ms ease-in-out;
+}
+
 main section table {
     margin: auto;
-    margin-top: 10%;
+    margin-top: 30px;
     text-align: center;
     font-size: x-large;
     border-collapse: separate;
@@ -70,3 +117,8 @@ main section table tr{
     padding-bottom: 50px;
 }
 
+footer {
+  background-color: black;
+  padding: 100px;
+  margin-top: 300px;
+}
